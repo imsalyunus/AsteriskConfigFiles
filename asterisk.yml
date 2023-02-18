@@ -4,6 +4,7 @@
   become: yes
   become_method: sudo
   become_user: root
+  ansible_sudo_pass=admin
   tasks:
     - name: Install apache packages
       yum:
