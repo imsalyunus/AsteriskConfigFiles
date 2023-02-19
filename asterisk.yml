@@ -7,3 +7,5 @@
       ansible.builtin.apt:
         name: asterisk
         state: present
+    - name: Hapus file sip.conf
+      ansible.builtin.shell: rm /etc/asterisk/sip.conf
