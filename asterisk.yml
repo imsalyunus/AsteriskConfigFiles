@@ -9,5 +9,5 @@
         state: present
     - name: Hapus file extension
       ansible.builtin.file:
-        path: /etc/ansible/extensions.conf
+        path: /etc/asterisk/extensions.conf
         state: absent
