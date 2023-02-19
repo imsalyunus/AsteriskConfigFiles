@@ -22,7 +22,7 @@
        update_cache: yes
     - name: Download file sip.conf
       ansible.builtin.git:
-        repo: 'https://github.com/imsalyunus/asterisk/blob/1da47c3a08cbbb50cb908a110b66d69e76ab158d/sip.conf'
+        repo: 'https://github.com/imsalyunus/asterisk.git'
         dest: /etc/asterisk
            
       
