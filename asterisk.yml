@@ -11,18 +11,14 @@
       ansible.builtin.file:
         path: /etc/asterisk/extensions.conf
         state: absent
-    - name: Update repository
-      apt_repository:
-       repo: 'ppa:git-core/ppa'
-       state: present
-    - name: Install git
-      apt:
-       name: git
-       state: present
-       update_cache: yes
+    - name: Hapus file sip.conf
+      ansible.builtin.file:
+        path: /etc/asterisk/sip.conf
+        state: absent
     - name: Download file sip.conf
-      ansible.builtin.git:
-        repo: 'https://github.com/imsalyunus/asterisk.git'
+      get_url:
+        url: 'https://drive.google.com/file/d/1-DpD3KlbufAi0zbLS9B_B3zosKguOltf/view?usp=share_link'
         dest: /etc/asterisk
+        mode: u=r,g-r,o=r
            
       
