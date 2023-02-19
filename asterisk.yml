@@ -7,9 +7,17 @@
       ansible.builtin.apt:
         name: asterisk
         state: present
-    - name: Hapus file sip.conf & extension.conf
-      ansible.builtin.shell: rm /etc/asterisk/sip.conf && rm /etc/asterisk/extension.conf
+    - name: Hapus file sip.conf
+      ansible.builtin.shell: rm /etc/asterisk/sip.conf
+    - name: Hapus file extension.conf
+      ansible.builtin.shell: rm /etc/asterisk/extension.conf
     - name: Git checkout
       ansible.builtin.git:
         repo: 'https://github.com/imsalyunus/asterisk.git'
         dest: /etc/asterisk
+    - name: Copy file sip.conf
+      ansible.builtin.shell: mv /asterisk/sip.conf /etc/asterisk/
+    - name: Hapus file extension.conf
+      ansible.builtin.shell: mv /asterisk/extension.conf /etc/asterisk/
+    - name: Restart Server Asterisk
+      ansible.builtin.shell: systemctl asterisk restart
