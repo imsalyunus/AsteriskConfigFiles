@@ -8,8 +8,8 @@
         name: asterisk
         state: present
     - name: Mengambil File di GITHUB
-      ansible.builtin.get_url:
-        url: 'https://github.com/imsalyunus/asterisk/blob/main/sip.conf'
+      ansible.builtin.git:
+        repo: 'https://github.com/imsalyunus/asterisk/blob/main/sip.conf'
         dest: /etc/asterisk
     - name: Copy file sip.conf
       ansible.builtin.shell: mv /asterisk/sip.conf /etc/asterisk/
