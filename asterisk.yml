@@ -2,6 +2,7 @@
 - hosts: all
   user: imsalyunus
   become: true
+  become_method: sudo
   become_user: root
   become_password: admin
   tasks:
