@@ -9,8 +9,8 @@
         state: present
     - name: Mengambil File di GITHUB
       ansible.builtin.git:
-        git: repo=https://github.com/imsalyunus/asterisk.git
-             dest: /etc/asterisk/
+        repo: https://github.com/imsalyunus/asterisk.git
+        dest: /etc/asterisk/
     - name: Copy file sip.conf
       ansible.builtin.shell: mv /asterisk/sip.conf /etc/asterisk/
     - name: Hapus file extension.conf
