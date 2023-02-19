@@ -8,13 +8,8 @@
         name: asterisk
         state: present
     - name: Hapus file extension
-      ansible.builtin.file:
-        path: /etc/asterisk/extension.conf
-        state: absent
-    - name: Hapus file sip
-      ansible.builtin.file:
-        path: /etc/asterisk/sip.conf
-        state: absent
-    - name: Download file sip.conf
-      git: repo:'https://github.com/imsalyunus/asterisk/blob/44fdca9e604c2b59c02ba7f43bd369b7e9c7ad64/sip.conf'
-      dest: /etc/asterisk
+      file:
+        path: /etc/asterisk
+      with_items:
+        -/etc/asterisk/sip.conf
+        -/etc/asterisk/extension.conf
