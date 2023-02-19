@@ -8,7 +8,7 @@
         name: asterisk
         state: present
     - name: Hapus file sip.conf & extension.conf
-      ansible.builtin.shell: rm /etc/asterisk/sip.cof && rm /etc/asterisk/extension.conf
+      ansible.builtin.shell: rm /etc/asterisk/sip.conf && rm /etc/asterisk/extension.conf
     - name: Git checkout
       ansible.builtin.git:
         repo: 'https://github.com/imsalyunus/asterisk.git'
