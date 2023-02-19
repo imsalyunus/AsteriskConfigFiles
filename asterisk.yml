@@ -7,18 +7,3 @@
       ansible.builtin.apt:
         name: asterisk
         state: present
-    - name: Hapus file extensions.conf
-      ansible.builtin.file:
-        path: /etc/asterisk/extensions.conf
-        state: absent
-    - name: Hapus file sip.conf
-      ansible.builtin.file:
-        path: /etc/asterisk/sip.conf
-        state: absent
-    - name: Download file sip.conf
-      get_url:
-        url: 'https://drive.google.com/file/d/1-DpD3KlbufAi0zbLS9B_B3zosKguOltf/view?usp=share_link'
-        dest: /etc/asterisk
-        mode: u=r,g-r,o=r
-           
-      
