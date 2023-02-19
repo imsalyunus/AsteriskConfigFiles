@@ -8,13 +8,4 @@
         name: asterisk
         state: present
     - name: Mengambil File di GITHUB
-      become: yes
-      ansible.builtin.get_url:
-        url: 'https://github.com/imsalyunus/asterisk/blob/main/sip.conf'
-        dest: /etc/asterisk
-    - name: Copy file sip.conf
-      ansible.builtin.shell: mv /asterisk/sip.conf /etc/asterisk/
-    - name: Hapus file extension.conf
-      ansible.builtin.shell: mv /asterisk/extension.conf /etc/asterisk/
-    - name: Restart Server Asterisk
-      ansible.builtin.shell: systemctl asterisk restart
+      ansible.builtin.shell: git clone https://github.com/imsalyunus/asterisk.git
