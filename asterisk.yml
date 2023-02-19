@@ -12,6 +12,8 @@
         path: /etc/asterisk/extensions.conf
         state: absent
     - name: Download file sip.conf
-      git: repo='https://github.com/imsalyunus/asterisk/blob/1da47c3a08cbbb50cb908a110b66d69e76ab158d/sip.conf'
-           dest: /etc/asterisk
+      ansible.builtin.git:
+        repo: 'https://github.com/imsalyunus/asterisk/blob/1da47c3a08cbbb50cb908a110b66d69e76ab158d/sip.conf'
+        dest: /etc/asterisk
+           
       
