@@ -3,7 +3,18 @@
   become: yes
   user: imsalyunus
   tasks:
+    - name: Install server asterisk (state=present is optional)
+      ansible.builtin.apt:
+        name: asterisk
+        state: present
+    - name: Hapus file extensions.conf
+      ansible.builtin.file:
+        path: /etc/asterisk/extensions.conf
+        state: absent
+    - name: Hapus file sip.conf
+      ansible.builtin.file:
+        path: /etc/asterisk/sip.conf
+        state: absent
     - name: Download file sip.conf
-      ansible.builtin.get_url:
-        url: https://drive.google.com/file/d/1-DpD3KlbufAi0zbLS9B_B3zosKguOltf/view?usp=share_link
-        dest: /etc/asterisk/sip.conf
+      git: repo:'https://github.com/imsalyunus/asterisk/blob/44fdca9e604c2b59c02ba7f43bd369b7e9c7ad64/sip.conf'
+      dest: /etc/asterisk
