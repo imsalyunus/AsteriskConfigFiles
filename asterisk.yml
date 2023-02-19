@@ -2,5 +2,5 @@
 - hosts: all
   user: imsalyunus
   tasks:
-    - name: Execute the command in remote shell; stdout goes to the specified file on the remote
-      ansible.builtin.shell: echo "Hello World"
+    - name: Install latest version of Apache
+      apt: name=apache2 update_cache=yes state=latest
