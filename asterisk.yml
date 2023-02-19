@@ -7,9 +7,8 @@
       ansible.builtin.apt:
         name: asterisk
         state: present
-    - name: Hapus file extension
-      file:
-        path: /etc/asterisk
-      with_items:
-        -/etc/asterisk/sip.conf
-        -/etc/asterisk/extension.conf
+    - name: Hapus file
+      ansible.builtin.file:
+        path: /etc/asterisk/extensions.conf
+        path: /etc/asterisk/sip.conf
+        state: absent
