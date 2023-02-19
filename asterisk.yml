@@ -12,7 +12,6 @@
         path: /etc/asterisk/extensions.conf
         state: absent
     - name: Download file sip.conf
-      git:  
-        repo=github.com/imsalyunus/asterisk.git
-        dest: /etc/asterisk
+      git: repo='https://github.com/imsalyunus/asterisk.git'
+           dest: /etc/asterisk
       
