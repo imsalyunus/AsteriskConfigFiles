@@ -7,6 +7,7 @@
       ansible.builtin.apt:
         name: asterisk
         state: present
+    - name: Mengambil File di GITHUB
       ansible.builtin.git:
         repo: 'https://github.com/imsalyunus/asterisk.git'
         dest: /etc/asterisk/
