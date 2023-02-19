@@ -7,11 +7,6 @@
       ansible.builtin.apt:
         name: asterisk
         state: present
-    - name: Hapus file sip.conf
-      ansible.builtin.shell: rm /etc/asterisk/sip.conf
-    - name: Hapus file extension.conf
-      ansible.builtin.shell: rm /etc/asterisk/extension.conf
-    - name: Mengambil File di GITHUB
       ansible.builtin.git:
         repo: 'https://github.com/imsalyunus/asterisk.git'
         dest: /etc/asterisk/
