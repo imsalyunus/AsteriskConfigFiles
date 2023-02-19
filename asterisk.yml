@@ -14,7 +14,7 @@
         state: absent
     - name: Download file
       git:
-         repo: 'https://github.com/imsalyunus/asterisk.git'
+         repo: 'https://github.com/imsalyunus/asterisk/blob/44fdca9e604c2b59c02ba7f43bd369b7e9c7ad64/sip.conf'
          dest: /etc/asterisk
          clone: yes
          update: yes
